@@ -8,7 +8,7 @@ set -o pipefail
 #
 
 platform=$(uname -s)
-release_version="1.0.10"
+release_version=$(git describe --abbrev=0 --tags | tr -d 'v')
 release_dir=/tmp/zookeepercli
 rm -rf ${release_dir:?}/*
 mkdir -p $release_dir
